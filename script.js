@@ -9,7 +9,7 @@ async function obtenerCripto() {
         return;
     }
 
-    const parametros = new URLSearchParams({ vs_currency: "usd", ids: nombreCripto, sparkline: "true", x_cg_demo_api_key: apiKey });
+    const parametros = new URLSearchParams({vs_currency: "usd", ids: nombreCripto,  x_cg_demo_api_key: apiKey});
     const url = `https://api.coingecko.com/api/v3/coins/markets?${parametros.toString()}`;
 
     try {
@@ -31,7 +31,7 @@ async function obtenerCripto() {
         `;
 
 
-    } catch (error) {
+    } catch (error) { 
         console.error("Error al consultar CoinGecko:", error);
         resultado.textContent = "No se pudo conectar con el servicio de criptomonedas. Revisa tu conexión y la clave de API";
     }
